@@ -1,0 +1,39 @@
+spring:
+  security:
+    enabled: false
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  profiles:
+    include:
+      - domain-database
+      - domain-redis
+      - core
+    active: external
+
+server:
+  port: 7777
+
+security:
+  basic:
+    enabled: false
+  ignored: none
+  password:
+    encoder:
+      strength: 10  # BCrypt strength
+
+jwt:
+  header: Authorization
+  secret: aGVsbG8gd29ybGQgbXkgbmFtZSBpcyBzc29uZyBoYWhhaGFoYWhhaGFoYSBydXJ1cnVydXJ1cnVydXJ1ZHNmc2Rmc2Rmc2Rmc2EK # fill in base64 [command: echo {plain_text} | base64]
+  access-token-validity-in-seconds: 86400
+
+management:
+  security:
+    enabled: false
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+    csrf:  # CSRF 설정 추가
+      enabled: false

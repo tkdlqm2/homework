@@ -1,0 +1,5 @@
+rootProject.name = 'template'
+include 'app-service'
+include 'core'
+include 'domain-database'
+include 'domain-redis'
