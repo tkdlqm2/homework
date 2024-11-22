@@ -18,7 +18,7 @@ spring:
         batch_size: 1000
         order_inserts: true
         order_updates: true
-      ddl-auto: create
+      ddl-auto: update
 
     show-sql: true
     properties:
